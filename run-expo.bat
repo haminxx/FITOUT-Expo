@@ -4,5 +4,5 @@ echo.
 echo Starting FITOUT Expo...
 echo Make sure your iPhone and laptop are on the SAME WiFi!
 echo.
-"C:\Program Files\nodejs\npx.cmd" expo start --tunnel
+"C:\Program Files\nodejs\npx.cmd" expo start --tunnel --clear
 pause
