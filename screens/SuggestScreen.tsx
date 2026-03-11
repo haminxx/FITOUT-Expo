@@ -13,7 +13,7 @@ const PRODUCT_COUNT = 4;
 
 export default function SuggestScreen({ navigation }: SuggestScreenProps) {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="chevron-back" size={28} color="#fff" />
