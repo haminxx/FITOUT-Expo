@@ -1,12 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 
 const DESIGN = { background: '#000000', accent: '#d7ff81', card: '#FFFFFF', textGray: '#636363' };
 
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
+const H_PADDING = 16;
+const IMG_WIDTH = SCREEN_WIDTH - H_PADDING * 2;
+const IMG_HEIGHT = IMG_WIDTH * (4 / 3);
+
 const TAGS = [
-  { id: '1', label: 'Top', x: '20%', y: '25%' },
-  { id: '2', label: 'Bottom', x: '55%', y: '60%' },
-  { id: '3', label: 'Shoes', x: '75%', y: '85%' },
+  { id: '1', label: 'Top', x: 0.2, y: 0.25 },
+  { id: '2', label: 'Bottom', x: 0.5, y: 0.55 },
+  { id: '3', label: 'Shoes', x: 0.75, y: 0.85 },
 ];
 
 interface GeneratedImageViewProps {
@@ -25,7 +30,13 @@ export default function GeneratedImageView({ navigation }: GeneratedImageViewPro
         {TAGS.map((tag) => (
           <TouchableOpacity
             key={tag.id}
-            style={[styles.tag, { left: tag.x, top: tag.y }]}
+            style={[
+              styles.tag,
+              {
+                left: IMG_WIDTH * tag.x - 35,
+                top: IMG_HEIGHT * tag.y - 14,
+              },
+            ]}
             onPress={() => onTagPress(tag.id)}
             activeOpacity={0.8}
           >

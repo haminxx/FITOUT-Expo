@@ -12,14 +12,17 @@ export default function ProductResultsScreen({ route }: ProductResultsScreenProp
   const tagId = route?.params?.tagId;
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Similar clothes</Text>
-      <Text style={styles.subtitle}>
-        {tagId ? `Results for tag` : 'Exact or similar items by style, color, fit'}
-      </Text>
+      {/* Header bar */}
+      <View style={styles.headerBar} />
+
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
+        {/* Large central image placeholder */}
+        <View style={styles.centralImage} />
+
+        {/* 3-column product grid */}
         <View style={styles.grid}>
           {MOCK_PRODUCTS.map((p) => (
             <ProductCard key={p.id} product={p} />
@@ -31,9 +34,26 @@ export default function ProductResultsScreen({ route }: ProductResultsScreenProp
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: DESIGN.background, padding: 16 },
-  title: { fontSize: 20, fontWeight: '700', color: '#fff', marginBottom: 4 },
-  subtitle: { fontSize: 14, color: DESIGN.textGray, marginBottom: 20 },
-  scrollContent: { paddingBottom: 40 },
-  grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
+  container: { flex: 1, backgroundColor: DESIGN.background },
+  headerBar: {
+    height: 44,
+    backgroundColor: DESIGN.searchBar,
+    borderRadius: 12,
+    marginHorizontal: 21,
+    marginTop: 16,
+    marginBottom: 20,
+  },
+  scrollContent: { paddingHorizontal: 21, paddingBottom: 100 },
+  centralImage: {
+    width: '100%',
+    aspectRatio: 3 / 4,
+    backgroundColor: DESIGN.searchBar,
+    borderRadius: 20,
+    marginBottom: 24,
+  },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 12,
+  },
 });

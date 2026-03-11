@@ -1,11 +1,11 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import AddContainerScreen from '../screens/AddContainerScreen';
-import ProductResultsScreen from '../screens/ProductResultsScreen';
+import ExploreScreen from '../screens/ExploreScreen';
+import SuggestScreen from '../screens/SuggestScreen';
 
 const Stack = createNativeStackNavigator();
 
-export default function AddStack() {
+export default function ExploreStack() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -13,8 +13,8 @@ export default function AddStack() {
         contentStyle: { backgroundColor: '#000000' },
       }}
     >
-      <Stack.Screen name="AddContainer" component={AddContainerScreen} />
-      <Stack.Screen name="ProductResults" component={ProductResultsScreen} />
+      <Stack.Screen name="Explore" component={ExploreScreen} />
+      <Stack.Screen name="Suggest" component={SuggestScreen} />
     </Stack.Navigator>
   );
 }

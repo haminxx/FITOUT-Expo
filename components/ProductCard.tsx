@@ -20,11 +20,10 @@ export default function ProductCard({ product }: ProductCardProps) {
 
 const styles = StyleSheet.create({
   card: {
+    width: '31%',
     backgroundColor: DESIGN.card,
     borderRadius: 12,
-    padding: 12,
-    width: '47%',
-    marginBottom: 16,
+    padding: 8,
   },
   imagePlaceholder: {
     width: '100%',
@@ -34,7 +33,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginBottom: 8,
   },
-  title: { fontSize: 14, fontWeight: '600', color: '#000', marginBottom: 4 },
-  price: { fontSize: 16, fontWeight: '700', color: DESIGN.background, marginBottom: 2 },
-  source: { fontSize: 12, color: DESIGN.textGray },
+  title: { fontSize: 12, fontWeight: '600', color: '#000', marginBottom: 2 },
+  price: { fontSize: 13, fontWeight: '700', color: DESIGN.background, marginBottom: 2 },
+  source: { fontSize: 10, color: DESIGN.textGray },
 });

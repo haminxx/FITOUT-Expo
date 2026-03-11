@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
   subtitle: { fontSize: 14, color: DESIGN.textGray, marginBottom: 32 },
   uploadArea: {
     width: '100%',
-    aspectRatio: 1,
-    maxHeight: 280,
+    aspectRatio: 3 / 4,
+    maxHeight: 320,
     backgroundColor: DESIGN.searchBar,
     borderRadius: 20,
     justifyContent: 'center',
