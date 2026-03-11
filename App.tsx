@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text, StyleSheet } from 'react-native';
 
 import HomeScreen from './screens/HomeScreen';
-import AddScreen from './screens/AddScreen';
+import AddStack from './navigation/AddStack';
 import ClosetScreen from './screens/ClosetScreen';
 import ProfileScreen from './screens/ProfileScreen';
 
@@ -38,7 +38,7 @@ export default function App() {
         />
         <Tab.Screen
           name="Add"
-          component={AddScreen}
+          component={AddStack}
           options={{ tabBarIcon: ({ color }) => <Text style={[styles.tabIcon, { color }]}>+</Text> }}
         />
         <Tab.Screen
